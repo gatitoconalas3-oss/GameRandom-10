@@ -1,26 +1,9 @@
 // Script para interactividad adicional y temporizador
 document.addEventListener('DOMContentLoaded', function() {
-    const btnPlay = document.querySelector('.btn-play');
     const elements = document.querySelectorAll('.element');
 
     // Inicializar temporizador de 20 días
     initializeCountdown();
-
-    // Evento al hacer click en el botón de jugar
-    btnPlay.addEventListener('click', function() {
-        console.log('¡Juego iniciado!');
-        animateElements();
-    });
-
-    // Función para animar elementos al hacer click
-    function animateElements() {
-        elements.forEach((element, index) => {
-            element.style.animation = 'none';
-            setTimeout(() => {
-                element.style.animation = '';
-            }, 10);
-        });
-    }
 
     // Efecto de movimiento del mouse en los elementos
     document.addEventListener('mousemove', function(e) {
