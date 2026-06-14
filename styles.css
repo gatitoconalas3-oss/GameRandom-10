@@ -26,6 +26,69 @@ body {
     gap: 60px;
 }
 
+/* Sección de Temporizador al inicio */
+.countdown-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: slideInDown 0.8s ease-out;
+    order: -1;
+}
+
+.countdown-label {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.countdown-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.countdown-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    min-width: 80px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    line-height: 1;
+}
+
+.countdown-label-item {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.countdown-separator {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+    margin: 0 5px;
+    animation: blink 1s ease-in-out infinite;
+}
+
+/* Contenido principal */
 .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -62,31 +125,6 @@ body {
     line-height: 1.6;
     max-width: 500px;
     animation: slideInLeft 0.8s ease-out 0.2s both;
-}
-
-.btn-play {
-    align-self: flex-start;
-    padding: 16px 40px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #667eea;
-    background: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    animation: slideInLeft 0.8s ease-out 0.3s both;
-}
-
-.btn-play:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    background: #f0f0f0;
-}
-
-.btn-play:active {
-    transform: translateY(-1px);
 }
 
 /* Sección Visual */
@@ -159,67 +197,6 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.35);
 }
 
-/* Sección de Temporizador */
-.countdown-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    animation: slideInUp 0.8s ease-out 0.4s both;
-}
-
-.countdown-label {
-    font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-.countdown-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 30px 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.countdown-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.countdown-value {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #ffffff;
-    min-width: 80px;
-    text-align: center;
-    font-family: 'Courier New', monospace;
-    line-height: 1;
-}
-
-.countdown-label-item {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.countdown-separator {
-    font-size: 2rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 300;
-    margin: 0 5px;
-    animation: blink 1s ease-in-out infinite;
-}
-
 /* Formas Flotantes de Fondo */
 .floating-shapes {
     position: fixed;
@@ -276,6 +253,17 @@ body {
     }
 }
 
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -295,17 +283,6 @@ body {
     to {
         opacity: 1;
         transform: translateX(0);
-    }
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -394,11 +371,6 @@ body {
 
     .description {
         font-size: 0.95rem;
-    }
-
-    .btn-play {
-        padding: 12px 30px;
-        font-size: 1rem;
     }
 
     .container {
