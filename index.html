@@ -10,58 +10,129 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Menú Hamburguesa -->
+    <div class="menu-container">
+        <button class="hamburger-btn" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav class="side-menu" id="sideMenu">
+            <button class="close-btn" id="closeMenu">✕</button>
+            <ul class="menu-items">
+                <li><a href="#" class="menu-link" data-section="hero">Próximos Estrenos</a></li>
+                <li><a href="#" class="menu-link" data-section="games">Games</a></li>
+                <li><a href="#" class="menu-link" data-section="movies">Movies</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div class="container">
-        <!-- Título Principal estilo Roblox -->
-        <div class="main-title-section">
-            <h1 class="game-title">GAME RANDOM 10</h1>
-            <div class="title-shine"></div>
-        </div>
+        <!-- Sección principal -->
+        <section class="hero-section" id="heroSection">
+            <!-- Título Principal estilo Roblox -->
+            <div class="main-title-section">
+                <h1 class="game-title" id="mainTitle">GAME RANDOM 5</h1>
+                <div class="title-shine"></div>
+            </div>
 
-        <!-- Temporizador -->
-        <div class="countdown-section">
-            <p class="countdown-label">Lanzamiento en:</p>
-            <div class="countdown-container">
-                <div class="countdown-item">
-                    <span class="countdown-value" id="days">20</span>
-                    <span class="countdown-label-item">Días</span>
-                </div>
-                <span class="countdown-separator">:</span>
-                <div class="countdown-item">
-                    <span class="countdown-value" id="hours">00</span>
-                    <span class="countdown-label-item">Horas</span>
-                </div>
-                <span class="countdown-separator">:</span>
-                <div class="countdown-item">
-                    <span class="countdown-value" id="minutes">00</span>
-                    <span class="countdown-label-item">Minutos</span>
-                </div>
-                <span class="countdown-separator">:</span>
-                <div class="countdown-item">
-                    <span class="countdown-value" id="seconds">00</span>
-                    <span class="countdown-label-item">Segundos</span>
+            <!-- Temporizador -->
+            <div class="countdown-section">
+                <p class="countdown-label">Lanzamiento en:</p>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days">20</span>
+                        <span class="countdown-label-item">Días</span>
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">00</span>
+                        <span class="countdown-label-item">Horas</span>
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">00</span>
+                        <span class="countdown-label-item">Minutos</span>
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">00</span>
+                        <span class="countdown-label-item">Segundos</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="content">
-            <div class="text-section">
-                <p class="subtitle">Descubre la magia de lo impredecible</p>
-                <p class="description">
-                    Sumérgete en una experiencia única donde la aleatoriedad se convierte en diversión. 
-                    Cada juego es diferente, cada momento es sorpresa.
-                </p>
-            </div>
-            
-            <div class="visual-section">
-                <div class="animated-elements">
-                    <div class="element element-1"></div>
-                    <div class="element element-2"></div>
-                    <div class="element element-3"></div>
-                    <div class="element element-4"></div>
-                    <div class="element element-5"></div>
+            <div class="content">
+                <div class="text-section">
+                    <p class="subtitle">Descubre la magia de lo impredecible</p>
+                    <p class="description">
+                        Sumérgete en una experiencia única donde la aleatoriedad se convierte en diversión. 
+                        Cada juego es diferente, cada momento es sorpresa.
+                    </p>
+                </div>
+                
+                <div class="visual-section">
+                    <div class="animated-elements">
+                        <div class="element element-1"></div>
+                        <div class="element element-2"></div>
+                        <div class="element element-3"></div>
+                        <div class="element element-4"></div>
+                        <div class="element element-5"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <!-- Indicador de scroll -->
+            <div class="scroll-indicator">
+                <span>Desplázate para más</span>
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Games -->
+        <section class="content-section hidden" id="gamesSection">
+            <div class="section-content">
+                <h2 class="section-title">GAMES</h2>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-card-title">Game Random 5</div>
+                        <div class="game-card-icon">🎮</div>
+                        <p>La versión más emocionante</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Movies -->
+        <section class="content-section hidden" id="moviesSection">
+            <div class="section-content">
+                <h2 class="section-title">MOVIES</h2>
+                <div class="movie-showcase">
+                    <img src="https://via.placeholder.com/400x300/1a1a2e/ff6b35?text=Movie+Random" alt="Movie Random" class="movie-image">
+                    <h3 class="movie-title">MOVIE RANDOM</h3>
+                    <p class="movie-description">Una experiencia cinematográfica aleatoria</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Coming Soon -->
+        <section class="coming-soon-section" id="comingSoonSection">
+            <div class="coming-soon-content">
+                <h2 class="coming-soon-title">COMING SOON</h2>
+                <div class="coming-soon-shine"></div>
+                <p class="coming-soon-text">¡Prepárate para la próxima revolución en los juegos!</p>
+                <div class="coming-soon-stars">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+            </div>
+        </section>
 
         <div class="floating-shapes">
             <div class="shape shape-1"></div>
