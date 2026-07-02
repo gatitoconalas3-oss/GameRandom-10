@@ -1,9 +1,35 @@
 // Script para interactividad adicional y temporizador
 document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.element');
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const menuLinks = document.querySelectorAll('.menu-link');
 
     // Inicializar temporizador de 20 días
     initializeCountdown();
+
+    // Menú hamburguesa
+    hamburger.addEventListener('click', function() {
+        sideMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    closeMenu.addEventListener('click', function() {
+        sideMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+
+    // Links del menú
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const section = this.dataset.section;
+            navigateToSection(section);
+            sideMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
 
     // Efecto de movimiento del mouse en los elementos
     document.addEventListener('mousemove', function(e) {
@@ -22,6 +48,39 @@ document.addEventListener('DOMContentLoaded', function() {
         const randomDuration = 5 + Math.random() * 4;
         element.style.animationDuration = randomDuration + 's';
     });
+
+    // Función para navegar entre secciones
+    function navigateToSection(sectionName) {
+        const heroSection = document.getElementById('heroSection');
+        const gamesSection = document.getElementById('gamesSection');
+        const moviesSection = document.getElementById('moviesSection');
+        const comingSoonSection = document.getElementById('comingSoonSection');
+        const mainTitle = document.getElementById('mainTitle');
+
+        // Ocultar todas las secciones
+        heroSection.classList.add('hidden');
+        gamesSection.classList.add('hidden');
+        moviesSection.classList.add('hidden');
+        comingSoonSection.classList.add('hidden');
+
+        // Mostrar la sección seleccionada
+        switch(sectionName) {
+            case 'games':
+                mainTitle.textContent = 'GAME RANDOM 5';
+                gamesSection.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                break;
+            case 'movies':
+                moviesSection.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                break;
+            case 'hero':
+            default:
+                heroSection.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                break;
+        }
+    }
 
     // Función para inicializar el temporizador
     function initializeCountdown() {
